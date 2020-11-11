@@ -11,30 +11,41 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "produto")
 public class ProdutoModel {
-	
+
+	@Column
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotNull
+
 	@Column
-	private String nome;
-	
 	@NotNull
+	public String nome;
+
 	@Column
-	private String descricao;
-	
-	@NotNull
+	public String descricao;
+
 	@Column
-	private String produtor;
-	
-	@NotNull
+	public String produtor;
+
 	@Column
-	private double preco;
-	
-	@NotNull
+	public double preco;
+
 	@Column
-	private String foto;
+	public String foto;
+
+//	@ManyToOne
+//	@JsonIgnoreProperties("produto")
+//	private CategoriaModel categoria;
+
+	// get & set
+//
+//	public CategoriaModel getCategoria() {
+//		return categoria;
+//	}
+//
+//	public void setCategoria(CategoriaModel categoria) {
+//		this.categoria = categoria;
+//	}
 
 	public Long getId() {
 		return id;
@@ -83,4 +94,5 @@ public class ProdutoModel {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
 }

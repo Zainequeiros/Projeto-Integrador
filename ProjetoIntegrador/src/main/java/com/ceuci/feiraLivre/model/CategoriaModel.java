@@ -8,25 +8,33 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
-@Table(name = "categoria")
+@Table(name="categoria")
 public class CategoriaModel {
 	
+	//ATRIBUTOS
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
 	@Column
-	private String tipo;
+	@NotNull
+	public String categoria;
 	
-	@NotNull
 	@Column
-	private boolean organico;
+	public boolean organico;
 	
-	@NotNull
 	@Column
-	private String unidade_medida_categoria;
+	public String unidade_medida;
+	
+//	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+//	@JsonIgnoreProperties("categoria")
+//	private List<ProdutoModel> produto;
+	
+	
+	//get e set
 
 	public Long getId() {
 		return id;
@@ -37,11 +45,11 @@ public class CategoriaModel {
 	}
 
 	public String getTipo() {
-		return tipo;
+		return categoria;
 	}
 
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		this.categoria = tipo;
 	}
 
 	public boolean isOrganico() {
@@ -52,11 +60,17 @@ public class CategoriaModel {
 		this.organico = organico;
 	}
 
-	public String getUnidade_medida_categoria() {
-		return unidade_medida_categoria;
+	public String getUnidade_medida() {
+		return unidade_medida;
 	}
 
-	public void setUnidade_medida_categoria(String unidade_medida_categoria) {
-		this.unidade_medida_categoria = unidade_medida_categoria;
+	public void setUnidade_medida(String unidade_medida) {
+		this.unidade_medida = unidade_medida;
 	}
+	
+	
+	
+	
+	
+
 }

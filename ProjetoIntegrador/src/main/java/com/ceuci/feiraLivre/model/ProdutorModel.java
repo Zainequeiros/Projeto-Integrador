@@ -9,8 +9,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="usuario")
-public class UsuarioModel {
+@Table(name="produtor")
+public class ProdutorModel {
 
 	@Column
 	@Id
@@ -31,25 +31,16 @@ public class UsuarioModel {
 	
 	@Column
 	@NotNull
-	public String cpf;
+	public String cnpj;
 	
-//	@OneToMany
-//	@JsonIgnoreProperties("usuario")
-//	private PedidoModel pedido;
-	
-	public String getCpf() {
-		return cpf;
+	public String getCnpj() {
+		return cnpj;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
-
-
-
-
-	
 	public Long getId() {
 		return id;
 	}
@@ -81,11 +72,5 @@ public class UsuarioModel {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
-	
-	
-	
-	
 	
 }
